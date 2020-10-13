@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  bookman.consoleapp:
+    image: ${DOCKER_REGISTRY-}bookman
+    build:
+      context: .
+      dockerfile: Bookman.ConsoleApp/Dockerfile
