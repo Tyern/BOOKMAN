@@ -46,44 +46,6 @@ namespace Bookman.ConsoleApp
 
                 Router.Instance.Forward(request);
                 Console.WriteLine();
-
-
-                //switch (request.ToLower())
-                //{
-                //    case "single":
-
-                //        Console.Write("Input the Id: ");
-                //        while (!int.TryParse(Console.ReadLine(), out id))
-                //        {
-                //            Console.Write("Id is invalid", ConsoleColor.Red);
-                //        }
-
-                //        controller.Single(id);
-                //        break;
-
-                //    case "create":
-                //        controller.Create();
-                //        break;
-
-                //    case "update":
-
-                //        Console.Write("Input the Id: ");
-                //        while (!int.TryParse(Console.ReadLine(), out id))
-                //        {
-                //            Console.Write("Id is invalid", ConsoleColor.Red);
-                //        }
-
-                //        controller.Update(id);
-                //        break;
-
-                //    case "list":
-                //        controller.List();
-                //        break;
-
-                //    default:
-                //        Write("Command not found.\n");
-                //        break;
-                //}
             }
         }
     }

@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookman.ConsoleApp", "Bookman.ConsoleApp\Bookman.ConsoleApp.csproj", "{6564871D-D510-4680-8536-0FF94D46CA80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookman.ConsoleApp", "Bookman.ConsoleApp\Bookman.ConsoleApp.csproj", "{B078B077-5203-4B86-BB5B-AE9F7668F17A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6564871D-D510-4680-8536-0FF94D46CA80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6564871D-D510-4680-8536-0FF94D46CA80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6564871D-D510-4680-8536-0FF94D46CA80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6564871D-D510-4680-8536-0FF94D46CA80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B078B077-5203-4B86-BB5B-AE9F7668F17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B078B077-5203-4B86-BB5B-AE9F7668F17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B078B077-5203-4B86-BB5B-AE9F7668F17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B078B077-5203-4B86-BB5B-AE9F7668F17A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
