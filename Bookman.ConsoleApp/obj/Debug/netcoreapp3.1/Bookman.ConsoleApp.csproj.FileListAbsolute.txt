@@ -1,0 +1,11 @@
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/bin/Debug/netcoreapp3.1/Bookman.ConsoleApp.deps.json
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/bin/Debug/netcoreapp3.1/Bookman.ConsoleApp.runtimeconfig.json
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/bin/Debug/netcoreapp3.1/Bookman.ConsoleApp.runtimeconfig.dev.json
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/bin/Debug/netcoreapp3.1/Bookman.ConsoleApp.dll
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/bin/Debug/netcoreapp3.1/Bookman.ConsoleApp.pdb
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/obj/Debug/netcoreapp3.1/Bookman.ConsoleApp.AssemblyInfoInputs.cache
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/obj/Debug/netcoreapp3.1/Bookman.ConsoleApp.AssemblyInfo.cs
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/obj/Debug/netcoreapp3.1/Bookman.ConsoleApp.csproj.CoreCompileInputs.cache
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/obj/Debug/netcoreapp3.1/Bookman.ConsoleApp.dll
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/obj/Debug/netcoreapp3.1/Bookman.ConsoleApp.pdb
+/Users/tranhoang/Repositories/BOOKMAN/Bookman.ConsoleApp/obj/Debug/netcoreapp3.1/Bookman.ConsoleApp.genruntimeconfig.cache

@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{6564871D-D510-4680-8536-0FF94D46CA80}|Default">
+  <MonoDevelop.Ide.ItemProperties.Bookman.ConsoleApp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bookman.ConsoleApp/Framework/Parameter.cs">
+    <Files>
+      <File FileName="Bookman.ConsoleApp/Program.cs" Line="26" Column="54" />
+      <File FileName="Bookman.ConsoleApp/Framework/Router.cs" Line="105" Column="18" />
+      <File FileName="Bookman.ConsoleApp/Framework/ViewHelp.cs" Line="1" Column="1" />
+      <File FileName="Bookman.ConsoleApp/Framework/Parameter.cs" Line="28" Column="47" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BOOKMAN" expanded="True">
+            <Node name="Bookman.ConsoleApp" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="DataServices" expanded="True" />
+              <Node name="Framework" expanded="True">
+                <Node name="Parameter.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
