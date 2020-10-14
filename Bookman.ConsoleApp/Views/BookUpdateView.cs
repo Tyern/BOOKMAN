@@ -22,7 +22,7 @@ namespace Bookman.ConsoleApp.Views
             {
                 if (!prop.CanWrite) continue;
                 // print the property and its old value
-                Write($"{prop.Name,ViewProperties.PADDING}:", ConsoleColor.Magenta);
+                Write($"{prop.Name,PADDING}:", ConsoleColor.Magenta);
                 Write($"{prop.GetValue(_model)}\n");
 
                 // input the value to the property, skip it if input is ""

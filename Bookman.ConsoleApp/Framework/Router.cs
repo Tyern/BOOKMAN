@@ -77,7 +77,7 @@ namespace Bookman.ConsoleApp.Framework
 
             if (!_routingTable.ContainsKey(req.Route))
             {
-                ViewHelp.WriteLine("The command is not invalid\n>>> See help", ConsoleColor.Red);
+                ViewHelp.WriteLine($"The command [{req.Route}] is not invalid\n>>> See help", ConsoleColor.Red);
                 return;
             }
 
@@ -114,7 +114,7 @@ namespace Bookman.ConsoleApp.Framework
                 }
 
                 // using regex to match the request and return 2 match group
-                Regex regex = new Regex(@"^\s*(\w+)\s*(?:\?([a-zA-Z0-9= ]*))?$");
+                Regex regex = new Regex(@"^\s*([A-Za-z-]+)\s*(?:\?([a-zA-Z0-9=& ~\/._]+))?$");
 
                 if (!regex.IsMatch(request))
                 {
@@ -125,7 +125,7 @@ namespace Bookman.ConsoleApp.Framework
                     Match match = regex.Match(request);
 
                     //group => [full-match | group1 | group2 ]
-
+                    foreach (var str in match.Groups) ViewHelp.Write($"|{str}|");
                     Route = match.Groups[1].Value.Trim().ToLower();
 
                     string parametersString = match.Groups[2].Value.Trim();

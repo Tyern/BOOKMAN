@@ -44,6 +44,11 @@ namespace Bookman.ConsoleApp.Framework
             return bool.Parse(input_str);
         }
 
+        public static int ToInt(this string value)
+        {
+            return int.Parse(value);
+        }
+
 
     }
 }

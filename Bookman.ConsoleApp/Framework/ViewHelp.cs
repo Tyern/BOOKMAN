@@ -5,6 +5,7 @@ namespace Bookman.ConsoleApp.Framework
 {
     public class ViewHelp
     {
+        public const int PADDING = -15;
         /// <summary>
         /// Print the string with color 
         /// </summary>

@@ -37,6 +37,18 @@ namespace Bookman.ConsoleApp
 
             Router.Instance.Register("help", Help);
 
+            Router.Instance.Register("single", p => controller.Single(p["id"].ToInt()));
+
+            Router.Instance.Register("update", p => controller.Update(p["id"].ToInt()));
+
+            Router.Instance.Register("create", p => controller.Create());
+
+            Router.Instance.Register("list", p => controller.List());
+
+            Router.Instance.Register("single-file", p => controller.Single(p["id"].ToInt(), p["path"]));
+
+            Router.Instance.Register("list-file", p => controller.List(p["path"]));
+
             //int id;
 
             while (true)

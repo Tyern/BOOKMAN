@@ -14,10 +14,14 @@ namespace Bookman.ConsoleApp.Controllers
             repository = new Repository(context);
         }
 
-        public void Single(int id)
+        public void Single(int id, string path = "")
         {
-            BookSingleView bookSingleView = new BookSingleView(repository.GetBookByID(id));
-            bookSingleView.Render();
+            BookSingleView view = new BookSingleView(repository.GetBookByID(id));
+
+            if (!string.IsNullOrEmpty(path)) BookSingleView
+                    .FileRender(repository.GetBookByID(id), path);
+
+            view.Render();
         }
 
         public void Create()
@@ -32,11 +36,15 @@ namespace Bookman.ConsoleApp.Controllers
             bookUpdateView.Render();
         }
 
-        public void List()
+        public void List(string path = "")
         {
-            Book[] model = repository.GetBook();
+            Book[] models = repository.GetBook();
 
-            var view = new BookListView(model);
+            var view = new BookListView(models);
+
+            //foreach (Book model in models)
+            if (!string.IsNullOrEmpty(path)) BookListView
+                    .FileRender(models, path);
 
             view.Render();
         }

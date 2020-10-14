@@ -6,7 +6,7 @@ namespace Bookman.ConsoleApp.Views
     using Models;
     using Framework;
 
-    class BookSingleView
+    class BookSingleView : RenderToFile
     {
         protected Book Model;
 
@@ -36,7 +36,7 @@ namespace Bookman.ConsoleApp.Views
             foreach (var prop in Model.GetType().GetProperties())
             {
                 if (prop.Name == "Id") continue;
-                Console.WriteLine($"{prop.Name,ViewProperties.PADDING}: {prop.GetValue(Model).BoolObjToStr()}");
+                Console.WriteLine($"{prop.Name, PADDING}: {prop.GetValue(Model).BoolObjToStr()}");
             }
 
             

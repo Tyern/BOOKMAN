@@ -4,7 +4,7 @@ namespace Bookman.ConsoleApp.Models
 {
     using Framework;
 
-    public class BookListView
+    public class BookListView : RenderToFile
     {
         protected Book[] Model;
         /// <summary>

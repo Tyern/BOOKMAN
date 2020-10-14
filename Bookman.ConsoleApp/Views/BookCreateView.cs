@@ -18,7 +18,7 @@ namespace Bookman.ConsoleApp.Views
             {
                 if (!prop.CanWrite) continue;
                 // print the property if it can be write and input the value to it
-                Write($"{prop.Name,ViewProperties.PADDING}[{prop.GetValue(model).GetType()}]:", ConsoleColor.Magenta);
+                Write($"{prop.Name, PADDING}[{prop.GetValue(model).GetType()}]:", ConsoleColor.Magenta);
                 string str = Console.ReadLine();
 
                 try
