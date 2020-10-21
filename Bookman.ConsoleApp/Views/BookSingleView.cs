@@ -6,25 +6,25 @@ namespace Bookman.ConsoleApp.Views
     using Models;
     using Framework;
 
-    class BookSingleView : RenderToFile
+    class BookSingleView : RenderToFile<Book>
     {
-        protected Book Model;
+        protected Book _model;
 
         /// <summary>
         /// Initialize the object with the book wanting to show
         /// </summary>
         /// <param name="model"></param>
-        public BookSingleView(Book model)
+        public BookSingleView(Book model) : base(model)
         {
-            Model = model;
+            _model = model;
         }
 
         /// <summary>
         /// print out the book info if the model is not null 
         /// </summary>
-        public void Render()
+        public override void Render()
         {
-            if (Model == null)
+            if (_model == null)
             {
                 WriteLine("BOOK NOT FOUND", ConsoleColor.Red);
                 return;
@@ -33,10 +33,10 @@ namespace Bookman.ConsoleApp.Views
             WriteLine("Detail of the book", ConsoleColor.Green);
             Console.WriteLine();
 
-            foreach (var prop in Model.GetType().GetProperties())
+            foreach (var prop in _model.GetType().GetProperties())
             {
                 if (prop.Name == "Id") continue;
-                Console.WriteLine($"{prop.Name, PADDING}: {prop.GetValue(Model).BoolObjToStr()}");
+                Console.WriteLine($"{prop.Name, PADDING}: {prop.GetValue(_model).BoolObjToStr()}");
             }
 
             

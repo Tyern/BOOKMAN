@@ -58,7 +58,7 @@ namespace Bookman.ConsoleApp.DataServices
         {
             int lastIndex = _context.Books.Count - 1;
 
-            var id = (lastIndex != 0) ? _context.Books[lastIndex].Id + 1 : 1;
+            var id = (lastIndex >= 0) ? _context.Books[lastIndex].Id + 1 : 1;
 
             book.Id = id;
 
@@ -80,14 +80,21 @@ namespace Bookman.ConsoleApp.DataServices
         {
             Book b = GetBookByID(id);
 
-            if (b == null) return false;
+            if (b == null)
+                return false;
+
+            foreach (var prop in typeof(Book).GetProperties())
             {
-                foreach (var prop in typeof(Book).GetProperties())
-                {
-                    prop.SetValue(b, prop.GetValue(book));
-                }
+                if (!prop.CanWrite || prop.Name.ToLower() == "id") continue;
+
+                prop.SetValue(b, Convert.ChangeType(prop.GetValue(book), prop.PropertyType));
             }
             return true;
+        }
+
+        public void Clear()
+        {
+            _context.Books.Clear();
         }
     }
 }

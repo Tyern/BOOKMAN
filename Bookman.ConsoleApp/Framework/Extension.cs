@@ -30,6 +30,8 @@ namespace Bookman.ConsoleApp.Framework
 
         public static bool StrToBool(this string input_str)
         {
+            if (input_str == null) return false;
+
             if (input_str.ToLower() == "y" || input_str.ToLower() == "yes")
             {
 

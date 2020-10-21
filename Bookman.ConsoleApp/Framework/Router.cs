@@ -43,7 +43,6 @@ namespace Bookman.ConsoleApp.Framework
 
         public string GetHelp(string key)
         {
-            ViewHelp.WriteLine($"key:{key}");
 
             if (_helpTable.ContainsKey(key))
             {
@@ -114,7 +113,7 @@ namespace Bookman.ConsoleApp.Framework
                 }
 
                 // using regex to match the request and return 2 match group
-                Regex regex = new Regex(@"^\s*([A-Za-z-]+)\s*(?:\?([a-zA-Z0-9=& ~\/._]+))?$");
+                Regex regex = new Regex(@"^\s*([A-Za-z-]+)\s*(?:\?([a-zA-Z0-9=& ~\/._-]+))?$");
 
                 if (!regex.IsMatch(request))
                 {
@@ -125,7 +124,6 @@ namespace Bookman.ConsoleApp.Framework
                     Match match = regex.Match(request);
 
                     //group => [full-match | group1 | group2 ]
-                    foreach (var str in match.Groups) ViewHelp.Write($"|{str}|");
                     Route = match.Groups[1].Value.Trim().ToLower();
 
                     string parametersString = match.Groups[2].Value.Trim();

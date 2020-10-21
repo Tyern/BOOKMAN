@@ -161,5 +161,15 @@ namespace Bookman.ConsoleApp.Models
         /// </summary>
         public string FileName { get => System.IO.Path.GetFileName(File); }
 
+
+        public override string ToString()
+        {
+            string str = "";
+            foreach (var prop in typeof(Book).GetProperties())
+            {
+                str += $"{prop.Name} = {prop.GetValue(this)}|";
+            }
+            return str;
+        }
     }
 }
