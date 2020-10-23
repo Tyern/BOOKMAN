@@ -4,35 +4,32 @@ using System.Collections.Generic;
 
 namespace Bookman.ConsoleApp.DataServices
 {
+    using System.Linq;
     using Models;
 
     public class Repository
     {
-        protected readonly SimpleDataAccess _context;
 
-        public Repository(SimpleDataAccess context)
+        protected readonly IDataAccess _context;
+
+        public Repository(IDataAccess context)
         {
             _context = context;
             _context.Load();
         }
 
-        public void SaveChanges() => _context.SaveChanges();
+        public void SaveChanges() => _context.SaveChange();
 
         public List<Book> Books => _context.Books;
 
-        public Book GetBookByID(int id)
-        {
-            foreach(var b in _context.Books)
-            {
-                if (id == b.Id)
-                {
-                    return b;
-                }
-            }
-            return null;
-        }
+        public Book GetBookByID(int id) => _context.Books.FirstOrDefault(b => b.Id == id);
 
         public Book[] GetBook() => _context.Books.ToArray();
+
+        public IEnumerable<IGrouping<string, Book>> Stats(string key = "folder")
+        {
+            return _context.Books.GroupBy(b => System.IO.Path.GetDirectoryName(b.File));
+        }
 
         public Book[] GetBook(string key)
         {
@@ -58,9 +55,7 @@ namespace Bookman.ConsoleApp.DataServices
         {
             int lastIndex = _context.Books.Count - 1;
 
-            var id = (lastIndex >= 0) ? _context.Books[lastIndex].Id + 1 : 1;
-
-            book.Id = id;
+            book.Id = (lastIndex >= 0) ? _context.Books[lastIndex].Id + 1 : 1; ;
 
             _context.Books.Add(book);
         }

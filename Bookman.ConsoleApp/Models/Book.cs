@@ -1,6 +1,9 @@
 ﻿using System;
+
+
 namespace Bookman.ConsoleApp.Models
 {
+    [Serializable]
     public class Book
     {
         int _id = 1;

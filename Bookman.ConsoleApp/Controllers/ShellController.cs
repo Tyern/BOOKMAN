@@ -13,7 +13,7 @@ namespace Bookman.ConsoleApp.Controllers
     {
         protected Repository repository;
 
-        public ShellController(SimpleDataAccess context)
+        public ShellController(IDataAccess context)
         {
             repository = new Repository(context);
         }
@@ -47,7 +47,12 @@ namespace Bookman.ConsoleApp.Controllers
                 repository.Add(book);
                 ViewHelp.WriteLine($"Added to repository: {book.Id} : {book.Title}");
             }
+        }
 
+        public void Save()
+        {
+            repository.SaveChanges();
+            Success("Data saved");
         }
     }
 }

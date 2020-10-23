@@ -12,10 +12,17 @@ namespace Bookman.ConsoleApp
 
             while (true)
             {
-                ViewHelp.Write("Request> ", ConsoleColor.DarkGreen);
-                var request = Console.ReadLine();
+                ViewHelp.Write(ConfigReader.Instance.PromptText, ConfigReader.Instance.Color);
 
+                var request = Console.ReadLine();
+                try
+                {
                 Router.Instance.Forward(request);
+                }
+                catch (Exception e)
+                {
+                    ViewHelp.WriteLine($"ERROR: {e}", ConsoleColor.Red);
+                }
                 Console.WriteLine();
             }
         }
@@ -30,7 +37,7 @@ namespace Bookman.ConsoleApp
         {
             if (parameter["cmd"] == null)
             {
-                ViewHelp.WriteLine(Router.Instance.GetRoute(), ConsoleColor.Yellow);
+                ViewHelp.WriteLine(Router.Instance.GetRoute(), ConsoleColor.DarkBlue);
                 return;
             }
             Console.BackgroundColor = ConsoleColor.DarkBlue;

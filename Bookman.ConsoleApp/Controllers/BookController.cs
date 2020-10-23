@@ -9,7 +9,7 @@ namespace Bookman.ConsoleApp.Controllers
     {
         private Repository repository;
         
-        public BookController(SimpleDataAccess context) =>
+        public BookController(IDataAccess context) =>
             repository = new Repository(context);
 
         /// <summary>
@@ -92,6 +92,12 @@ namespace Bookman.ConsoleApp.Controllers
             }
             else
                 repository.Clear();
+        }
+
+        public void ViewStats()
+        {
+            var view = new BookStatView(repository.Stats());
+            Render(view);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Bookman.ConsoleApp
 
         public static void ProgramConfig()
         {
-            SimpleDataAccess context = new SimpleDataAccess();
+            var context = ConfigReader.Instance.DataAccess;
 
             BookController controller = new BookController(context);
 
@@ -80,6 +80,14 @@ namespace Bookman.ConsoleApp
             Router.Instance.Register("clear",
                 p => controller.Clear(p["force"].StrToBool()),
                 "clear all the book in repository \n add-shell ? path & ext");
+
+            Router.Instance.Register("save-shell",
+                p => shell.Save(),
+                "save all the books in current repository to file\n save-shell");
+
+            Router.Instance.Register("stats",
+                p => controller.ViewStats(),
+                "show list of book grouped by directory\n stats");
 
         }
     }
